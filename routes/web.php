@@ -631,9 +631,9 @@ Route::group(['middleware' => ['common', 'auth', 'active']], function() {
 
 	Route::resource('custom-fields', CustomFieldController::class);
 
-	Route::post('woocommerce-install', [AddonInstallController::class,'woocommerceInstall'])->name('woocommerce.install');
+	// Route::post('woocommerce-install', [AddonInstallController::class,'woocommerceInstall'])->name('woocommerce.install');
 
-    Route::post('ecommerce-install', [AddonInstallController::class,'ecommerceInstall'])->name('ecommerce.install');
+    // Route::post('ecommerce-install', [AddonInstallController::class,'ecommerceInstall'])->name('ecommerce.install');
 
 });
 

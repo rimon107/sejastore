@@ -43,10 +43,10 @@ $subTotal = session()->has('subTotal') ? session()->get('subTotal') : 0;
     <!-- Links -->
     <link rel="icon" type="image/ico" href="{{ url('frontend/images') }}/{{$ecommerce_setting->favicon ?? ''}}" />
     <!-- Plugins CSS -->
-    <link href="{{ asset('public/frontend/css/plugins.css') }}" rel="stylesheet" />
-    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset('public/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
+    <link href="{{ asset('frontend/css/plugins.css') }}" rel="stylesheet" />
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
     <noscript>
-        <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset('public/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
+        <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ asset('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}">
     </noscript>
     @else
     <!-- Links -->
@@ -67,7 +67,7 @@ $subTotal = session()->has('subTotal') ? session()->get('subTotal') : 0;
 
     <style>
         :root {
-            --theme-color: #fa9928;
+            --theme-color: #fe0103;
         }
 
         /* Minified style.css */
@@ -593,7 +593,7 @@ $subTotal = session()->has('subTotal') ? session()->get('subTotal') : 0;
     <script>
         {!! file_get_contents(Module::find('Ecommerce')->getPath(). "/assets/js/plugin.js") !!}
     </script>
-    <script src="{{ asset('public/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js') }}"></script>
+    <script src="{{ asset('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js') }}"></script>
     <!-- Main js -->
     <script>
         {!! file_get_contents(Module::find('Ecommerce')->getPath(). "/assets/js/main.js") !!}

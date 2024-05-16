@@ -75,7 +75,7 @@
 @endsection
 
 @section('script')
-<script src="{{ asset('public/frontend/js/swiper.min.js') }}"></script>
+<script src="{{ asset('frontend/js/swiper.min.js') }}"></script>
 <script type="text/javascript">
     "use strict";
 
