@@ -107,13 +107,13 @@ Route::group(['prefix' => 'developer-section'], function () {
      });
 });
 
-Route::controller(ClientAutoUpdateController::class)->group(function () {
-    Route::get('/new-release', 'newVersionReleasePage')->name('new-release');
-    Route::get('/bugs', 'bugUpdatePage')->name('bug-update-page');
-    // Action on Client server
-    Route::post('version-upgrade', 'versionUpgrade')->name('version-upgrade');
-    Route::post('bug-update', 'bugUpdate')->name('bug-update');
-});
+// Route::controller(ClientAutoUpdateController::class)->group(function () {
+//     Route::get('/new-release', 'newVersionReleasePage')->name('new-release');
+//     Route::get('/bugs', 'bugUpdatePage')->name('bug-update-page');
+//     // Action on Client server
+//     Route::post('version-upgrade', 'versionUpgrade')->name('version-upgrade');
+//     Route::post('bug-update', 'bugUpdate')->name('bug-update');
+// });
 
 
 Auth::routes();
@@ -158,15 +158,15 @@ Route::group(['middleware' => ['common', 'auth', 'active']], function() {
         Route::get('my-transactions/{year}/{month}', 'myTransaction');
     });
 
-    Route::controller(SaasInstallController::class)->group(function () {
-        Route::prefix('saas')->group(function () {
-            Route::get('install/step-1', 'saasInstallStep1')->name('saas-install-step-1');
-            Route::get('install/step-2', 'saasInstallStep2')->name('saas-install-step-2');
-            Route::get('install/step-3', 'saasInstallStep3')->name('saas-install-step-3');
-            Route::post('install/process', 'saasInstallProcess')->name('saas-install-process');
-            Route::get('install/step-4', 'saasInstallStep4')->name('saas-install-step-4');
-        });
-    });
+    // Route::controller(SaasInstallController::class)->group(function () {
+    //     Route::prefix('saas')->group(function () {
+    //         Route::get('install/step-1', 'saasInstallStep1')->name('saas-install-step-1');
+    //         Route::get('install/step-2', 'saasInstallStep2')->name('saas-install-step-2');
+    //         Route::get('install/step-3', 'saasInstallStep3')->name('saas-install-step-3');
+    //         Route::post('install/process', 'saasInstallProcess')->name('saas-install-process');
+    //         Route::get('install/step-4', 'saasInstallStep4')->name('saas-install-step-4');
+    //     });
+    // });
 
     // Need to check again
     Route::resource('products',ProductController::class)->except([ 'show']);
