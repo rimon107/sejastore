@@ -166,7 +166,7 @@ $subTotal = session()->has('subTotal') ? session()->get('subTotal') : 0;
                         <a href="{{url('/')}}">
                             @if(!config('database.connections.saleprosaas_landlord'))
                                 @if(isset($ecommerce_setting->logo))
-                                <img src="{{ url('logo/') }}/{{$ecommerce_setting->logo}}" alt="{{$ecommerce_setting->site_title ?? ''}}">
+                                <img src="{{ url('frontend/images/') }}/{{$ecommerce_setting->logo}}" alt="{{$ecommerce_setting->site_title ?? ''}}">
                                 @else
                                 <img src="{{ asset('public/logo') }}/{{$general_setting->site_logo}}" alt="{{$ecommerce_setting->site_title ?? ''}}">
                                 @endif
