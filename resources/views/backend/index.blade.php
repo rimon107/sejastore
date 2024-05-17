@@ -27,15 +27,6 @@
       @endphp
       <div class="row">
         <div class="container-fluid">
-          @if( !config('database.connections.saleprosaas_landlord') && \Auth::user()->role_id <= 2 && isset($_COOKIE['login_now']) && $_COOKIE['login_now'] )
-            <div id="update-alert-section" class="{{ $alertVersionUpgradeEnable===true ? null : 'd-none' }} alert alert-primary alert-dismissible fade show" role="alert">
-                <!-- <p id="announce" class="{{ $alertVersionUpgradeEnable===true ? null : 'd-none' }}"><strong>Hurray !!!</strong> A new version {{config('auto_update.VERSION')}} <span id="newVersionNo"></span> has been released. Please <i><b><a href="{{route('new-release')}}">Click here</a></b></i> to check upgrade details.</p>
-                <button type="button" id="closeButtonUpgrade" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button> -->
-            </div>
-            <?php setcookie('login_now', 0, time() + (86400 * 1), "/");?>
-          @endif
           <div class="col-md-12">
             <div class="brand-text float-left mt-4">
                 <h3>{{trans('file.welcome')}} <span>{{Auth::user()->name}}</span></h3>
