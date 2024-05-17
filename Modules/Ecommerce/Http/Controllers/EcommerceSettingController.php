@@ -72,13 +72,13 @@ class EcommerceSettingController extends Controller
             if ($logo) {
                 $ext = pathinfo($logo->getClientOriginalName(), PATHINFO_EXTENSION);
                 $imageName =  date("Ymdhis") . '.' . $ext;
-                $logo->move('public/frontend/images/', $imageName);
-                $img_lg = Image::make('public/frontend/images/'. $imageName)
+                $logo->move('frontend/images/', $imageName);
+                $img_lg = Image::make('frontend/images/'. $imageName)
                           ->resize(300, null, function ($constraint) {
                             $constraint->aspectRatio();
                             $constraint->upsize();
                           })
-                          ->save('public/frontend/images/'. $imageName);
+                          ->save('frontend/images/'. $imageName);
 
 
                 $data['logo'] = $imageName;
@@ -92,8 +92,8 @@ class EcommerceSettingController extends Controller
                 $ext = pathinfo($favicon->getClientOriginalName(), PATHINFO_EXTENSION);
                 $imageName = date("Ymdhis") . '.' . $ext;
                 //return $imageName;  
-                $favicon->move('public/frontend/images/', $imageName);
-                $img_lg = Image::make('public/frontend/images/'. $imageName)->fit(50, 50)->save('public/frontend/images/'. $imageName);
+                $favicon->move('frontend/images/', $imageName);
+                $img_lg = Image::make('frontend/images/'. $imageName)->fit(50, 50)->save('frontend/images/'. $imageName);
 
                 $data['favicon'] = $imageName;
             }
